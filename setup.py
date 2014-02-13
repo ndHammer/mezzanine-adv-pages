@@ -13,7 +13,7 @@ setup(
     include_package_data=True,
     license='BSD License',
     description='Blockable pages and layout for Mezzanine CMS',
-    long_description=README,
+    long_description="Blockable pages and layout for Mezzanine CMS",
     url='http://www.evolutionwebsolutions.com/',
     author='Nick Lyga',
     author_email='nick@evolutionwebsolutions.com',
