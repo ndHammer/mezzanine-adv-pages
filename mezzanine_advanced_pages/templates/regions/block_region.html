@@ -1,0 +1,16 @@
+{% load block_regions block_tags staticfiles %}
+
+<div id="region-{{region}}" class="block-region">
+	{% if perms.mezzanine_advanced_pages.can_edit_advancedpage %}
+	<div class="region-actions">
+		<a href="#addblock" data-region="{{region}}"><span class="glyphicon glyphicon-plus-sign"></span></a>
+	</div>
+	{% endif %}
+	{% for reg, flatblock in renderedflatblocks.items %}
+		{% if reg == region %}
+    		{{flatblock|safe}}
+    	{% endif %}
+	{% empty %}
+	{% endfor %}
+</div>
+

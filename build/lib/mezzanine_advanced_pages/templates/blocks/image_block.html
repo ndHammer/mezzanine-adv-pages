@@ -1,0 +1,27 @@
+{% extends "blocks/block.html" %}
+{% load mezzanine_tags %}
+
+
+{% block block_content %}
+	{% if perms.mezzanine_advanced_pages.can_edit_advancedpage %}
+	<div class="region-block-actions">
+		<form method="post" class="block-delete" action="{% url 'advpage-block-delete' %}" >
+			{% csrf_token %}
+			<input type="hidden" name="block_region_id" value="{{block_region_id}}">
+			<input type="hidden" name="page_id" value="{{page.advancedpage.id}}">
+			<button type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+		</form>
+	</div>
+	{% endif %}
+    {% editable flatblock.image %}
+    <div class="content-image">
+        {% if flatblock.get_url %}
+        <a href="{{ flatblock.get_url }}" rel="nofollow">
+            <img src="{{ flatblock.get_thumb_url }}">
+        </a>
+        {% else %}
+            <img src="{{ flatblock.get_thumb_url }}">
+        {% endif %}
+    </div>
+    {% endeditable %}
+{% endblock %}

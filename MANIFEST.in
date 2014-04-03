@@ -1,0 +1,3 @@
+recursive-include mezzanine_advanced_pages/templates *
+recursive-include mezzanine_advanced_pages/templatetags *
+recursive-include mezzanine_advanced_pages/static *

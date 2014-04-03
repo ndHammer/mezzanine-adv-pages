@@ -1,0 +1,23 @@
+.block-region {
+	position: relative;
+}
+.block-region .region-actions {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+}
+
+.flatblock {
+	position: relative;
+}
+
+.block-region .flatblock .region-block-actions {
+	position: absolute;
+	top: 0;
+	right: 5px;
+}
+
+.popover-content  {
+	overflow: auto;
+	min-width: 250px;
+}

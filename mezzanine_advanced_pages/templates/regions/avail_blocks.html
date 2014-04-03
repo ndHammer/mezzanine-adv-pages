@@ -1,0 +1,37 @@
+<div class="avail_block_list">
+	<h3>User Blocks</h3>
+	<ul class="nav nav-stacked">
+	{% for imageblock in ImageBlocks %}
+		{{imageblock.content}}
+	{% endfor %}
+	
+	
+	{% for richblock in RichBlocks %}
+	 <li><div class="block_item row">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<p>{{ richblock.slug|truncatechars:50 }}</p>
+		</div>
+	  	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+	  	<a href="#popover" class="btn btn-info" data-toggle="popover" title="Preview" data-content='{{richblock.content|safe}}' role="button"><span class="glyphicon glyphicon-search"></span></a>
+		<button name="submit" value="richblock__{{richblock.id}}"  type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>	
+	  	</div>
+	  	</div>
+	  </li>
+	{% endfor %}
+	
+	
+	{% for block in Blocks %}
+		<li><div class="block_item row">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<p>{{ block.slug|truncatechars:50 }}</p>
+		</div>
+	  	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+	  	<a href="#popover" class="btn btn-info" data-toggle="popover" title="Preview" data-content='{{block.content|safe}}' role="button"><span class="glyphicon glyphicon-search"></span></a>
+		<button name="submit" value="block__{{block.id}}"  type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>	
+	  	</div>
+	  	</div>
+	  </li>
+	{% endfor %}
+	</ul>
+	
+</div>
