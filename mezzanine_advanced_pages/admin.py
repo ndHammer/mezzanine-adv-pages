@@ -30,7 +30,7 @@ class AdvancedPageAdmin(PageAdmin):
         would be better to have it tell the user what block were orphaned
         and have them choose where they should go
         """
-        RegionBlocks.objects.filter(page=obj.id).delete()
+        #RegionBlocks.objects.filter(page=obj.id).delete()
         super(PageAdmin, self).save_model(request, obj, form, change)
 
 

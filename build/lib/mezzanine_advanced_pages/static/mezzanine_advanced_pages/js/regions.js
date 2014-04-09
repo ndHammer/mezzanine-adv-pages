@@ -29,8 +29,10 @@ $(function() {
 	
 	$('.block-region .flatblock').hover(function(e) {
 		$(this).find('.region-block-actions').show('fast');
+		$(this).find('.editable-link').css('visibility', 'visible');
 	}, function(e) {
 		$(this).find('.region-block-actions').hide('fast');
+		$(this).find('.editable-link').css('visibility', 'hidden');
 	});
 	
 	$('.avail_block_list a[href=#popover]').popover({html: true});

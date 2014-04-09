@@ -13,13 +13,14 @@ def add_blocktoregion(request):
     #import pdb;pdb.set_trace()
     if request.POST['submit'] == 'richtext':
         advpage = AdvancedPage.objects.get(pk=request.POST['page_id'])
-        richtext = RichBlock(content='New Text Block', title=".".join((advpage.slug, request.POST['region'], str(uuid.uuid1()))))
+        block_title = request.POST['block_title']
+        richtext = RichBlock(content='New Text Block', title=block_title)
         richtext.save()
         regionblock = RegionBlocks(region=request.POST['region'], page=advpage, richtext_block=richtext, order=1);
         regionblock.save()
     elif request.POST['submit'] == 'imageblock':
         advpage = AdvancedPage.objects.get(pk=request.POST['page_id'])
-        imageblock = ImageBlock(title=".".join((advpage.slug, request.POST['region'], str(uuid.uuid1()))))
+        imageblock = ImageBlock(title=block_title)
         imageblock.save()
         regionblock = RegionBlocks(region=request.POST['region'], page=advpage, image_block=imageblock, order=1);
         regionblock.save()

@@ -3,19 +3,17 @@ from mezzanine.pages.models import Page
 from mezzanine_blocks.models import RichBlock, ImageBlock, Block
 from django.conf import settings
 import os
-import platform
 # Create your models here.
 
 def get_layout_choices():
     static_root = os.path.join(settings.PROJECT_ROOT.strip("/"), 'templates', 'layouts');
     layouts = []
-    if platform.system() == "Windows":
-        list_dir = static_root
-    else:
-        list_dir = "/"+static_root
-    for file in os.listdir(list_dir):
-        if file.endswith(".html"):
-            layouts.append((os.path.splitext(file)[0], os.path.splitext(file)[0]))
+    try:
+        for file in os.listdir(static_root):
+            if file.endswith(".html"):
+                layouts.append((os.path.splitext(file)[0], os.path.splitext(file)[0]))
+    except FileNotFoundError:
+        pass
     return layouts
 
 
