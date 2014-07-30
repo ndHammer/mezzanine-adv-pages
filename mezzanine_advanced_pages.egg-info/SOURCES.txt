@@ -1,4 +1,5 @@
 MANIFEST.in
+setup.cfg
 setup.py
 mezzanine_advanced_pages/__init__.py
 mezzanine_advanced_pages/admin.py
@@ -103,5 +104,3 @@ mezzanine_advanced_pages/templates/regions/avail_blocks.html
 mezzanine_advanced_pages/templates/regions/block_region.html
 mezzanine_advanced_pages/templatetags/__init__.py
 mezzanine_advanced_pages/templatetags/block_regions.py
-mezzanine_advanced_pages/templatetags/__pycache__/__init__.cpython-33.pyc
-mezzanine_advanced_pages/templatetags/__pycache__/block_regions.cpython-33.pyc
