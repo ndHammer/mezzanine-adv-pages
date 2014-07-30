@@ -6,7 +6,8 @@ import os
 # Create your models here.
 
 def get_layout_choices():
-    static_root = os.path.join(settings.PROJECT_ROOT.strip("/"), 'templates', 'layouts');
+    static_root = os.path.join('/', settings.PROJECT_ROOT.strip("/"), 'templates', 'layouts')
+    #static_root = os.path.join(settings.PROJECT_ROOT.strip("/"), 'templates', 'layouts')
     layouts = []
     try:
         for file in os.listdir(static_root):
